@@ -8,7 +8,7 @@ jobs:
     runs-on: macos-latest
     steps:
       - uses: actions/checkout@v4
-      - uses: Homebrew/actions/setup-homebrew@master
+      - uses: Homebrew/actions/setup-homebrew@main
       - name: Symlink checkout as a Homebrew tap
         run: |
           taps_dir="$(brew --repository)/Library/Taps/zacs"
