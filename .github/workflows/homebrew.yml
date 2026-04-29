@@ -9,9 +9,12 @@ jobs:
     steps:
       - uses: actions/checkout@v4
       - uses: Homebrew/actions/setup-homebrew@master
-      - name: Tap this repository locally so audit can use the formula name
-        run: brew tap zacs/ha-apple_content_cache-client "$GITHUB_WORKSPACE"
+      - name: Symlink checkout as a Homebrew tap
+        run: |
+          taps_dir="$(brew --repository)/Library/Taps/zacs"
+          mkdir -p "$taps_dir"
+          ln -s "$GITHUB_WORKSPACE" "$taps_dir/homebrew-ha-apple_content_cache-client"
       - name: Audit formula (strict, online) by name
         run: brew audit --strict --online zacs/ha-apple_content_cache-client/ha_apple_content_cache_client
       - name: Install formula from tapped repository
-        run: brew install --build-from-source ha_apple_content_cache_client
+        run: brew install --build-from-source zacs/ha-apple_content_cache-client/ha_apple_content_cache_client
