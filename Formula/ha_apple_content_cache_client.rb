@@ -18,10 +18,7 @@ class HaAppleContentCacheClient < Formula
     interval 300
     log_path var/"log/ha-apple_content_cache-client.log"
     error_log_path var/"log/ha-apple_content_cache-client.log"
-    environment_variables(
-      "ENV_PATH" => etc/"ha-apple_content_cache-client/.env",
-      "HOME"     => Dir.home,
-    )
+    environment_variables ENV_PATH: etc/"ha-apple_content_cache-client/.env"
   end
 
   def caveats
