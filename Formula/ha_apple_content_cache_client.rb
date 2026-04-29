@@ -27,8 +27,8 @@ class HaAppleContentCacheClient < Formula
         #{etc}/ha-apple_content_cache-client/.env
 
       Service commands:
-        brew services start zacs/ha-apple_content_cache-client/ha-apple_content_cache_client
-        brew services stop zacs/ha-apple_content_cache-client/ha-apple_content_cache_client
+        brew services start zacs/ha-apple_content_cache-client/ha_apple_content_cache_client
+        brew services stop zacs/ha-apple_content_cache-client/ha_apple_content_cache_client
 
       Logs:
         tail -f ~/Library/Logs/ha-apple_content_cache-client.log
