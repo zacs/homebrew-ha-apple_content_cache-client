@@ -20,6 +20,7 @@ class HaAppleContentCacheClient < Formula
     error_log_path var/"log/ha-apple_content_cache-client.log"
     environment_variables(
       "ENV_PATH" => etc/"ha-apple_content_cache-client/.env",
+      "HOME"     => Dir.home,
     )
   end
 

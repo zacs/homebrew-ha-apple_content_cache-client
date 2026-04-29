@@ -43,6 +43,7 @@ else
   CLIENT_NAME=$(hostname -s)
 fi
 
+HOME="${HOME:-$(eval echo ~$(whoami))}"
 LOG_FILE="$HOME/Library/Logs/ha-apple_content_cache-client.log"
 mkdir -p "$(dirname "$LOG_FILE")"
 
